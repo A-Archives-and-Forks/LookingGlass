@@ -339,7 +339,9 @@ int main_cursorThread(void * unused)
           RENDERER(onMouseEvent,
             g_cursor.guest.visible && (g_cursor.draw || !g_params.useSpiceInput),
             g_cursor.guest.x,
-            g_cursor.guest.y
+            g_cursor.guest.y,
+            g_cursor.guest.hx,
+            g_cursor.guest.hy
           );
 
           if (!g_state.stopVideo)
@@ -438,7 +440,9 @@ int main_cursorThread(void * unused)
     RENDERER(onMouseEvent,
       g_cursor.guest.visible && (g_cursor.draw || !g_params.useSpiceInput),
       g_cursor.guest.x,
-      g_cursor.guest.y
+      g_cursor.guest.y,
+      g_cursor.guest.hx,
+      g_cursor.guest.hy
     );
 
     if (g_params.mouseRedraw && g_cursor.guest.visible && !g_state.stopVideo)
